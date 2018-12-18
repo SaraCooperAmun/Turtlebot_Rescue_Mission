@@ -54,6 +54,8 @@ Follow steps indicated in  https://github.com/bnurbekov/Turtlebot_Navigation by 
 #####  Autonomous navigation in pre-built map and object detection
 
 It serves to localize the robot in the saved map by using the AMCL package and autonomously moving it to multiple goal locations using move_base, while reading data from find_object_2d to place markers on objects. 
+The code is loosely based on https://github.com/markwsilliman/turtlebot/blob/master/go_to_specific_point_on_map.py which includes the script to send one goal to the move_base.
+
 
 
 Edit navigation_simulation.launch file to specify map. 
