@@ -44,11 +44,14 @@ Modifications have been that so that it is sufficient to launch the following, w
 
 $ roslaunch turtlebot_samples exploration_gazebo.launch
 
-On rviz, select with “Point” a polygon and a goal location within the polygon. A quicker way  is to directly set the goal locations using 2D Nav goal
+On rviz, select with “Point” a polygon and a goal location within the polygon. A quicker way  is to directly set the goal locations using 2D Nav goal.
+
+See video of how it works here: https://streamable.com/mqdmx
 
 ##### Autonomous mapping with PID controller
 
 Follow steps indicated in  https://github.com/bnurbekov/Turtlebot_Navigation by changing the world of the launch file. In the event that the robot does not cover the whole mapped area (as is common), teleop the robot. 
+See video of how it works here: https://streamable.com/t068h
 
 
 #####  Autonomous navigation in pre-built map and object detection
@@ -74,6 +77,8 @@ roscd to obstacle_avoidance/src and on a separate terminal run:
 
 $ python navigation_simulation.py
 
+See video of how it works here: https://streamable.com/dq7k1
+To clearly see how the coordinates of a detected human are published to the screen refer to https://streamable.com/6n2ja
 
 
 ### Turtlebot
@@ -108,6 +113,7 @@ The robot was moved around the environment and the built map was saved by roscd-
 
 $ rosrun map_server map_saver -f ggo.   The  map was saved both in pgm  and yaml  formats.   
 
+See video of how it works here: https://streamable.com/kmnmg
 
 ##### Autonomous navigation in pre-built map
 
@@ -130,6 +136,7 @@ Roscd to obstacle_avoidance/src. If desired edit the goal coordinates/orientatio
 
 $ python navigation_robot.py
 
+See video of how it works here: https://streamable.com/swjue
 
  
 
