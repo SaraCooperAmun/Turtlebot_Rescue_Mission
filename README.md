@@ -78,7 +78,7 @@ $ python navigation_simulation.py
 
 On the real turtlebot the map is generated using gmapping (Hokuyo) and teleoperation, and then the robot is localized and moves autonomously to the set coordinate locations (it does not integrate object detection).
 
-### Gmapping (hokuyo) + teleop
+#####  Gmapping (hokuyo) + teleop
 
 On turtlebot:
 
@@ -107,7 +107,7 @@ The robot was moved around the environment and the built map was saved by roscd-
 $ rosrun map_server map_saver -f ggo.   The  map was saved both in pgm  and yaml  formats.   
 
 
-### Autonomous navigation in pre-built map
+##### Autonomous navigation in pre-built map
 
 First edit navigation_robot.launch to update map.
 <arg name="map_file" default="$(find obstacle_avoidance)/maps/ggo.yaml"/>
