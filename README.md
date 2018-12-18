@@ -75,15 +75,20 @@ Rosrun hokuyo_node hokuyo_node
 
 On pc
 
-rosrun gmapping slam_gmapping scan:=/scan
+To build the map of the environment, gmapping package was used by launching the following command on the turtlebot laptop as follows:
+$ rosrun gmapping slam_gmapping scan:=/scan
 
-roslaunch turtlebot_rviz_launchers view_navigation.launch
+After this, the command to move the robot around using keyboard was launched on the remote computer as follows:
+$ roslaunch turtlebot_teleop keyboard_teleop.launch 
+The visualisation of the mapping process was viewed by implementing on another terminal shell of the remote computer as follows:
+ $ roslaunch turtlebot_rviz_launchers view_navigation.launch
+On the Rviz platform, the robot model edited by selecting the odom in the drop down lists as against map that was initially reflected.
+The navigation of the turtlebot was then achieved by using the keyboard to move it around having switch over to the terminal shell where the ‘roslaunch turtlebot_teleop keyboard_teleop.launch’ command  was implemented.
+The robot was moved around the environment and the built map was saved by roscd-ing to obstacle_avoidance/maps and with
+$ rosrun map_server map_saver -f ggo.   The  map was saved both in pgm  and yaml  formats.   
 
-roslaunch turtlebot_teleop keyboard_teleop.launch
 
-Roscd to obstacle_avoidance/maps, and save map with
 
-rosrun map_server map_saver -f map
 
 
 NAVIGATION
