@@ -14,6 +14,13 @@ roslaunch turtlebot_teleop keyboard_teleop.launch
 
 FRONTIER EXPLORATION
 
+
+Follow instructions of
+
+https://github.com/JohanOsinga/RosTurtle/wiki/Turtlebot-autonomous-mapping
+
+Modifications have been that so that it is sufficient to launch the following, which also launches the simulation world. 
+
 roslaunch turtlebot_samples exploration_gazebo.launch
 
 On rviz, select with “Point” a polygon and a goal location within the polygon. A quicker way (that shown on video) is to directly set the goal locations using 2D Nav goal
