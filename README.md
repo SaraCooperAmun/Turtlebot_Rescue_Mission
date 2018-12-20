@@ -1,5 +1,7 @@
 # Turtlebot_Rescue_Mission
 
+Project done by AUDRY Hanako, COOPER Sara, OLADIPUPO Gideon
+
 The aim of the project is to design a system that can build a map of the environment, navigate autonomously and recognise markers along the way, especially with the aim of recognising alive/dead people. 
 
 The codes used for simulation in gazebo and real turtlebot are collected in this repository. The integration of the components has been in two ways: by autonomously navigating the robot and recognise markers in a pre-built map; and by building the map of the environment and marker recognition at the same time. 
