@@ -21,6 +21,8 @@ First ensure the Hokuyo laser is added to the turtlebot description and is worki
 
 export TURTLEBOT_3D_SENSOR="hokuyo"
 
+To enable gmapping, make sure there is a copy of "hokuyo_gmapping.launch.xml" under turtlebot_navigation/launch/includes.
+
 Then launch the gazebo world file by specifying the correct path.
 
 $ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/pathto/obstacle_avoidance/worlds/rss1.world
@@ -31,18 +33,22 @@ $ rosrun gmapping slam_gmapping scan:=/laserscan
 
 $ roslaunch turtlebot_rviz_launchers view_navigation.launch
 
-Teleoperate the robot around the environment with the following command (separate window) and observe the map being built. 
+The robot was moved around the environment.
 
 $ roslaunch turtlebot_teleop keyboard_teleop.launch
 
 ##### Frontier exploration
 
+Install "Frontier Exploration" package: https://github.com/paulbovbel/frontier_exploration
 
-Follow instructions of https://github.com/JohanOsinga/RosTurtle/wiki/Turtlebot-autonomous-mapping
+Install "turtlebot_samples" package: https://github.com/130s/turtlebot_samples
 
-Modifications have been that so that it is sufficient to launch the following, which also launches the simulation world. 
+Change world file from "exploration_gazebo.launch" file to 
+
+<arg name="world_file" default="pathto/obstacle_avoidance/worlds/rss1.world"/>
 
 $ roslaunch turtlebot_samples exploration_gazebo.launch
+
 
 On rviz, select with “Point” a polygon and a goal location within the polygon. A quicker way  is to directly set the goal locations using 2D Nav goal.
 
@@ -50,8 +56,20 @@ See video of how it works here: https://streamable.com/mqdmx
 
 ##### Autonomous mapping with PID controller
 
-Follow steps indicated in  https://github.com/bnurbekov/Turtlebot_Navigation by changing the world of the launch file. In the event that the robot does not cover the whole mapped area (as is common), teleop the robot. 
+Load the world:
+$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/pathto/obstacle_avoidance/worlds/rss1.world
+
+And follow steps indicated in  https://github.com/bnurbekov/Turtlebot_Navigation
+
+$ rosrun rviz rviz'
+$ roslaunch final_project final_project.launch
+$ rosrun final_project mapping.py
+$ rosrun final_project control.py
+
+
+In the event that the robot does not cover the whole mapped area (as is common), teleop the robot. 
 See video of how it works here: https://streamable.com/t068h
+
 
 
 #####  Autonomous navigation in pre-built map and object detection
@@ -59,7 +77,7 @@ See video of how it works here: https://streamable.com/t068h
 It serves to localize the robot in the saved map by using the AMCL package and autonomously moving it to multiple goal locations using move_base, while reading data from find_object_2d to place markers on objects. 
 The code is loosely based on https://github.com/markwsilliman/turtlebot/blob/master/go_to_specific_point_on_map.py which includes the script to send one goal to the move_base.
 
-
+In order to place the markers the "visualization_marker_tutorial" must be installed from https://github.com/ros-visualization/visualization_tutorials
 
 Edit navigation_simulation.launch file to specify map. 
 <arg name="map_file" default="$(find obstacle_avoidance)/maps/simulation_map.yaml"/>
@@ -89,12 +107,22 @@ On the real turtlebot the map is generated using gmapping (Hokuyo) and teleopera
 
 On turtlebot:
 
+Edit the .bashrc to set the 3d sensor to "Hokuyo".
+
+export TURTLEBOT_3D_SENSOR="hokuyo"
+
 $ roslaunch turtlebot_bringup minimal_with_hokuyo.launch
 
 $ rosrun hokuyo_node hokuyo_node
 
 
 On PC:
+
+Edit the .bashrc to set the 3d sensor to "Hokuyo".
+
+export TURTLEBOT_3D_SENSOR="hokuyo"
+
+Make sure there is a copy of "hokuyo_gmapping.launch.xml" under turtlebot_navigation/launch/includes.
 
 To build the map of the environment, gmapping package was used by launching the following command on the turtlebot laptop as follows:
 $ rosrun gmapping slam_gmapping scan:=/scan
