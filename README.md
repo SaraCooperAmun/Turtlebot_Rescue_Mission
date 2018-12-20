@@ -103,6 +103,7 @@ To clearly see how the coordinates of a detected human are published to the scre
 
 On the real turtlebot the map is generated using gmapping (Hokuyo) and teleoperation, and then the robot is localized and moves autonomously to the set coordinate locations (it does not integrate object detection).
 
+
 #####  Gmapping (hokuyo) + teleop
 
 On turtlebot:
