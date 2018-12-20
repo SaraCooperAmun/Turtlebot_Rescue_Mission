@@ -4,6 +4,7 @@ The aim of the project is to design a system that can build a map of the environ
 
 The codes used for simulation in gazebo and real turtlebot are collected in this repository. The integration of the components has been in two ways: by autonomously navigating the robot and recognise markers in a pre-built map; and by building the map of the environment and marker recognition at the same time. 
 
+Links to videos are also attached. To download a video, simply follow the link, right-click and "Save video as". 
 ## Autonomous navigation and object detection in a pre-built map
 
 The first step in this demo is to build a map of the environment, and then to launch the navigation launch file and ROS node. 
