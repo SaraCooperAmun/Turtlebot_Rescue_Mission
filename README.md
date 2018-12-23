@@ -61,7 +61,7 @@ See video of how it works here: https://streamable.com/mqdmx
 
 Load the world:
 ```bash
-$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=/pathto/obstacle_avoidance/worlds/rss1.world
+$ roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(find obstacle_avoidance)/worlds/rss1.world
 ```
 And follow steps indicated in  https://github.com/bnurbekov/Turtlebot_Navigation
 ```bash
@@ -87,7 +87,7 @@ Edit navigation_simulation.launch file to specify map.
 ```bash
 <arg name="map_file" default="$(find obstacle_avoidance)/maps/simulation_map.yaml"/>
 ```
-Launch the following in separate command prompts:
+Launch the following in separate command prompts (refer to next section for details on how to include find_object_2d):
 ```bash
 $ roslaunch obstacle_avoidance navigation_simulation.launch
 
