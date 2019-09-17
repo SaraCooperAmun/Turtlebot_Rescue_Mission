@@ -100,8 +100,7 @@ roscd to obstacle_avoidance/src and on a separate terminal run:
 ```bash
 $ python navigation_simulation.py
 ```
-See video of how it works here: https://streamable.com/dq7k1
-To clearly see how the coordinates of a detected human are published to the screen refer to https://streamable.com/6n2ja
+See video of how it works here: https://youtu.be/lfxeDlCYsO0
 
 
 ### Turtlebot
@@ -149,7 +148,7 @@ The robot was moved around the environment and the built map was saved by roscd-
 ```bash
 $ rosrun map_server map_saver -f ggo.   The  map was saved both in pgm  and yaml  formats.   
 ```
-See video of how it works here: https://streamable.com/kmnmg
+
 
 ##### Autonomous navigation in pre-built map
 
@@ -173,7 +172,7 @@ Roscd to obstacle_avoidance/src. If desired edit the goal coordinates/orientatio
 ```bash
 $ python navigation_robot.py
 ```
-See video of how it works here: https://streamable.com/swjue
+See video of how it works here: https://youtu.be/UoQJvCftzLU
 
 ### RTAB-Map and find_object_2d
 
